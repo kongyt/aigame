@@ -12,6 +12,9 @@ public class CatapultBehaviour : MonoBehaviour {
     public bool showRock;
 
     [Space(20)]
+    public RuntimeAnimatorController catapultAnimatorController;
+
+    [Space(20)]
     public Material black;
     public Material blue;
     public Material brown;

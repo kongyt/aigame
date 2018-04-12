@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.AIGame", "UnityVS.AIGame.csproj", "{B145E597-D951-080C-F23D-88865F6FDF04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.AIGame.Editor", "UnityVS.AIGame.Editor.csproj", "{48E2D788-FAFC-5806-5E39-E0EB6F3E1EAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B145E597-D951-080C-F23D-88865F6FDF04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B145E597-D951-080C-F23D-88865F6FDF04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B145E597-D951-080C-F23D-88865F6FDF04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B145E597-D951-080C-F23D-88865F6FDF04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E2D788-FAFC-5806-5E39-E0EB6F3E1EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E2D788-FAFC-5806-5E39-E0EB6F3E1EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E2D788-FAFC-5806-5E39-E0EB6F3E1EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E2D788-FAFC-5806-5E39-E0EB6F3E1EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

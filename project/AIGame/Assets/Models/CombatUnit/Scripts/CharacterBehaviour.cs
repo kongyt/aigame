@@ -5,6 +5,9 @@ using System.Collections;
 [ExecuteInEditMode]
 public class CharacterBehaviour : MonoBehaviour {
 
+    private CharacterType lastCharacterType;
+    public CharacterType characterType;
+
     private ColorType lastColorType;
     public ColorType colorType;
 
@@ -47,6 +50,13 @@ public class CharacterBehaviour : MonoBehaviour {
     public Material red;
     public Material tan;
     public Material white;
+
+    [Space(20)]
+    public RuntimeAnimatorController archerAnimatorController;
+    public RuntimeAnimatorController infantryAnimatorController;
+    public RuntimeAnimatorController mageAnimatorController;
+    public RuntimeAnimatorController spearmanAnimatorController;
+    public RuntimeAnimatorController workerAnimatorController;
 
     [Space(20)]
     public SkinnedMeshRenderer arms_A;
@@ -113,6 +123,10 @@ public class CharacterBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (lastCharacterType != characterType) {
+            SetCharacterType(characterType);
+        }
+
         if (lastColorType != colorType) {
             SetColorType(colorType);
         }
@@ -167,6 +181,30 @@ public class CharacterBehaviour : MonoBehaviour {
             SetHasQuiver(hasQuiver);
         }
 	}
+
+    public void SetCharacterType(CharacterType type) {
+        this.lastCharacterType = type;
+        RuntimeAnimatorController tmp = null;
+        switch (type) { 
+            case CharacterType.Archer:
+                tmp = archerAnimatorController;
+                break;
+            case CharacterType.Infantry:
+                tmp = infantryAnimatorController;
+                break;
+            case CharacterType.Mage:
+                tmp = mageAnimatorController;
+                break;
+            case CharacterType.Spearman:
+                tmp = spearmanAnimatorController;
+                break;
+            case CharacterType.Worker:
+                tmp = workerAnimatorController;
+                break;
+        }
+
+        this.gameObject.GetComponent<Animator>().runtimeAnimatorController = tmp;    
+    }
 
     public void SetColorType(ColorType type) {
         this.lastColorType = type;

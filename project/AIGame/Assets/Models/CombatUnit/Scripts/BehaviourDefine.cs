@@ -11,3 +11,6 @@ public enum LHandType { None, Bow, Shield_A, Shield_B, Shield_C, Shield_D, Staff
 public enum RHandType { None, Axe_A, Axe_B, Hammer_A, Hammer_B, Pick, Spear, Sword_A, Sword_B };
 public enum ShoulderpadsType { None, A, B };
 public enum HorseType { None, A, B, C, D};
+
+public enum CavalryType { None, Cavalry, CavalryMage};
+public enum CharacterType { None, Archer, Infantry, Mage, Spearman, Worker};

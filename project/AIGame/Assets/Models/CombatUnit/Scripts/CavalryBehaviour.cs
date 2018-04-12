@@ -4,6 +4,9 @@ using System.Collections;
 [ExecuteInEditMode]
 public class CavalryBehaviour : MonoBehaviour {
 
+    private CavalryType lastCavalryType;
+    public CavalryType cavalryType;
+
     private ColorType lastColorType;
     public ColorType colorType;
 
@@ -31,7 +34,9 @@ public class CavalryBehaviour : MonoBehaviour {
     private ShoulderpadsType lastShoulderpadsType;
     public ShoulderpadsType shoulderpadsType;
 
-
+    [Space(20)]
+    public RuntimeAnimatorController cavalryAnimatorController;
+    public RuntimeAnimatorController cavalryMageAnimatorController;
 
     [Space(20)]
     public Material black;
@@ -112,6 +117,11 @@ public class CavalryBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (lastCavalryType != cavalryType)
+        {
+            SetCavalryType(cavalryType);
+        }
+
         if (lastColorType != colorType)
         {
             SetColorType(colorType);
@@ -156,6 +166,23 @@ public class CavalryBehaviour : MonoBehaviour {
             SetShoulderpadsType(shoulderpadsType);
         }
 	}
+
+    public void SetCavalryType(CavalryType type)
+    {
+        this.lastCavalryType = type;
+        RuntimeAnimatorController tmp = null;
+        switch (type)
+        {
+            case CavalryType.Cavalry:
+                tmp = cavalryAnimatorController;
+                break;
+            case CavalryType.CavalryMage:
+                tmp = cavalryMageAnimatorController;
+                break;
+        }
+
+        this.gameObject.GetComponent<Animator>().runtimeAnimatorController = tmp;
+    }
 
     public void SetColorType(ColorType type)
     {
