@@ -35,6 +35,9 @@ public class CavalryBehaviour : MonoBehaviour {
     public ShoulderpadsType shoulderpadsType;
 
     [Space(20)]
+    public GameObject animatorOwner;
+
+    [Space(20)]
     public RuntimeAnimatorController cavalryAnimatorController;
     public RuntimeAnimatorController cavalryMageAnimatorController;
 
@@ -181,7 +184,7 @@ public class CavalryBehaviour : MonoBehaviour {
                 break;
         }
 
-        this.gameObject.GetComponent<Animator>().runtimeAnimatorController = tmp;
+        animatorOwner.GetComponent<Animator>().runtimeAnimatorController = tmp;
     }
 
     public void SetColorType(ColorType type)
@@ -273,6 +276,7 @@ public class CavalryBehaviour : MonoBehaviour {
     }
 
     public void SetHorseType(HorseType type) {
+        this.lastHorseType = type;
         switch (type)
         { 
             case HorseType.A:

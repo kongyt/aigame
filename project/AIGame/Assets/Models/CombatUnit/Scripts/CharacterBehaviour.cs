@@ -42,6 +42,9 @@ public class CharacterBehaviour : MonoBehaviour {
     public bool hasQuiver;
 
     [Space(20)]
+    public GameObject animatorOwner;
+
+    [Space(20)]
     public Material black;
     public Material blue;
     public Material brown;
@@ -203,7 +206,7 @@ public class CharacterBehaviour : MonoBehaviour {
                 break;
         }
 
-        this.gameObject.GetComponent<Animator>().runtimeAnimatorController = tmp;    
+        animatorOwner.GetComponent<Animator>().runtimeAnimatorController = tmp;    
     }
 
     public void SetColorType(ColorType type) {
