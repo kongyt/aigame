@@ -58,4 +58,8 @@ public class BaseBuilding : MonoBehaviour {
     public virtual void UpdateBehaviour() { 
         
     }
+
+    public Vector3 GetPosition() {
+        return transform.position;
+    }
 }

@@ -22,4 +22,21 @@ public class CrystalMgr
     {
         this.crystalList.Add(crystal);
     }
+
+    public Crystal GetNearestCrystal(Vector3 position)
+    {
+        float minDis = float.MaxValue;
+        Crystal rs = null;
+        for (int i = 0; i < crystalList.Count; i++)
+        {
+            float dis = Vector3.Distance(position, crystalList[i].GetPosition());
+
+            if (dis < minDis)
+            {
+                minDis = dis;
+                rs = crystalList[i];
+            }
+        }
+        return rs;
+    }
 }
